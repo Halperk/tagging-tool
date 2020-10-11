@@ -5,10 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link href="style.css" rel="stylesheet">
         <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
-        <!-- <link rel="preload" as="font" type="font/woff2" href="./fonts/open-sans-v17-latin-600.woff2" crossorigin> -->
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;350;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/da7bedfd4d.js"></script>
         <title>SU-NLP NER Tool &#124; The Best One Ever</title>
@@ -22,7 +19,7 @@
                         <ul id="banner-navigation">
                             <li class="banner-navigation-item"><a class="banner-navigation-item-a" href="tool.html" title="Tagging tool"><span class="text">TOOL</span></a></li>
                             <li class="banner-navigation-item"><a class="banner-navigation-item-a" href="#" title="About us"><span class="text">ABOUT</span></a></li>
-                            <li class="banner-navigation-item" id="banner-navigation-account"><a class="banner-navigation-item-a" href="#"><i class="fa fa-user"></i></a></li>
+                            <li class="banner-navigation-item" id="banner-navigation-account"><a class="banner-navigation-item-a" href="#"><i class="fa fa-tags"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -31,7 +28,9 @@
     
                 <div id="taggingtool-result" class="result">
                     <div>
-                        <p id="result-text" class="result_paragraph">Hüseyin Alper Karadeniz</p>
+                        <div id="result-title"><a>THE RESULT</a></div>
+                        <p id="result-text" class="result_paragraph">Sabancı University</p>
+                        <div style="text-align: center; padding-top: 80px;"><button class="btn" onclick="reset()">Return</button></div>
                     </div>
                 </div>
 
@@ -41,18 +40,24 @@
     
                         <!-- <input type="hidden" name="token" value="000011112222333344445555"> -->
     
-                        <div class="taggingtool_query" contenteditable="true">
+                        <div class="taggingtool_query" spellcheck="false" contenteditable="true">
                             <p id="taggingtool_query_text">Write down the text you wanted to test.</p>
                         </div>
                         <br>
     
-                        <div style="text-align: center; padding-bottom: 20px;"><button class="btn" type="submit">Submit</button></div>
+                        <div style="text-align: center; padding-top:20px; padding-bottom: 40px;"><button class="btn" type="submit">Submit</button></div>
     
                     </form>
             
             
                 </div>
     
+            </div>
+            
+            <div id="copyright">
+                <div>
+                    <a>Copyright 2020 - Sabancı University</a>
+                </div>
             </div>
         </div>
         <script type="text/javascript">
@@ -71,13 +76,13 @@
                 for(var i = 0; i < words.length; i++) {
 
                     if(words[i].match("Alper")){
-                        var span = "<span class='word_per'>" + words[i] + " PER</span>"
+                        var span = "<span class='word_per'>" + words[i] + "</span><span class='word_per_bold'>PER</span>"
                         spans.push(span);
                     } else if (words[i].match("TEMA")) {
-                        var span = "<span class='word_org'>" + words[i] + " ORG</span>"
+                        var span = "<span class='word_org'>" + words[i] + "</span><span class='word_org_bold'>ORG</span>"
                         spans.push(span);
                     } else if (words[i].match("Istanbul")) {
-                        var span = "<span class='word_loc'>" + words[i] + " LOC</span>"
+                        var span = "<span class='word_loc'>" + words[i] + "</span><span class='word_loc_bold'>LOC</span>"
                         spans.push(span);
                     } else {
                         var span = "<span>" + words[i] + "</span>"
@@ -88,6 +93,11 @@
                 document.getElementById("result-text").innerHTML = spans.join(" ");
 
             } )
+
+            function reset() {
+                document.getElementById("taggingtool-submission").style.display = "block";
+                document.getElementById("taggingtool-result").style.display = "none";
+            }
 
         </script>
     </body>
