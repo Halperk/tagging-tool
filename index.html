@@ -15,7 +15,7 @@
             <header id="header">
                 <div id="banner">
                     <div id="banner-container">
-                        <a href="index.html" id="banner-title"><span class="text">SU-NLP NER TOOL</span></a>
+                        <a href="index.html" id="banner-title"><span class="text">NER TAGGING TOOL</span></a>
                         <ul id="banner-navigation">
                             <li class="banner-navigation-item"><a class="banner-navigation-item-a" href="tool.html" title="Tagging tool"><span class="text">TOOL</span></a></li>
                             <li class="banner-navigation-item"><a class="banner-navigation-item-a" href="#" title="About us"><span class="text">ABOUT</span></a></li>
@@ -25,80 +25,22 @@
                 </div>
             </header>
             <div id="main">
-    
-                <div id="taggingtool-result" class="result">
-                    <div>
-                        <div id="result-title"><a>THE RESULT</a></div>
-                        <p id="result-text" class="result_paragraph">Sabancı University</p>
-                        <div style="text-align: center; padding-top: 80px;"><button class="btn" onclick="reset()">Return</button></div>
-                    </div>
+                <div id="main-content">
+                    <div id="main-content-main-text"><a>Speed up your tagging process</a><br><a>with SU-NLP NER Tool</a></div>
+                    <div id="main-content-second-text"><a>Developed by Sabancı University</a></div>
+                    <div id="main-content-button"><button class="btn btn-intro">Let's Try</button></div>
                 </div>
-
-                <div id="taggingtool-submission" class="taggingtool">
-            
-                    <form id="taggingtool-form" method="POST">
-    
-                        <!-- <input type="hidden" name="token" value="000011112222333344445555"> -->
-    
-                        <div class="taggingtool_query" spellcheck="false" contenteditable="true">
-                            <p id="taggingtool_query_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus lobortis ipsum, dignissim finibus ligula tempor a. Ut ac ante condimentum, porttitor felis quis, sollicitudin mi. Praesent et blandit leo. Donec pharetra aliquet lorem vel molestie. Duis porttitor augue at venenatis bibendum. In id interdum felis. Alper imperdiet sem vel magna tristique dictum. TEMA vehicula ante eget neque congue, rhoncus ultricies ligula maximus. Aliquam erat volutpat. In hac habitasse platea dictumst. Integer orci quam, malesuada ut risus vel, lacinia feugiat eros. Nam Istanbul orci sit amet orci cursus, sit amet scelerisque felis vehicula.</p>
-                        </div>
-                        <br>    
-    
-                        <div style="text-align: center; padding-top:20px; padding-bottom: 40px;"><button class="btn" type="submit">Submit</button></div>
-    
-                    </form>
-            
-            
+                <div id="main-content-image"><a><i class="fa fa-tags"></i></a></div>
+                <div id="main-waves">
+                        <svg style="position: absolute;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#FFFFFF54" fill-opacity="1" d="M0,160L60,149.3C120,139,240,117,360,144C480,171,600,245,720,234.7C840,224,960,128,1080,117.3C1200,107,1320,181,1380,218.7L1440,256L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#FFFFFF54" fill-opacity="1" d="M0,256L60,240C120,224,240,192,360,165.3C480,139,600,117,720,128C840,139,960,181,1080,197.3C1200,213,1320,203,1380,197.3L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
                 </div>
-    
             </div>
             
-            <div id="copyright">
-                <div>
-                    <a>Copyright 2020 - Sabancı University</a>
-                </div>
+        <div id="copyright">
+            <div>
+                <a>Copyright 2020 - Sabancı University</a>
             </div>
         </div>
-        <script type="text/javascript">
-            const form = document.getElementById("taggingtool-form");
-
-            form.addEventListener("submit", (e) => {
-                
-                e.preventDefault();
-
-                document.getElementById("taggingtool-submission").style.display = "none";
-                document.getElementById("taggingtool-result").style.display = "block";
-                
-                var words = document.getElementById("taggingtool_query_text").innerText.split(" ");
-                var spans = [];
-                
-                for(var i = 0; i < words.length; i++) {
-
-                    if(words[i].match("Alper")){
-                        var span = "<span class='word_special_per'><span data-title='PER' class='word_per'>" + words[i] + "</span><span class='word_per_bold'>PER</span></span>"
-                        spans.push(span);
-                    } else if (words[i].match("TEMA")) {
-                        var span = "<span class='word_special_org'><span data-title='ORG' class='word_special word_org'>" + words[i] + "</span><span class='word_org_bold'>ORG</span></span>"
-                        spans.push(span);
-                    } else if (words[i].match("Istanbul")) {
-                        var span = "<span class='word_special_loc'><span data-title='LOC' class='word_special word_loc'>" + words[i] + "</span><span class='word_loc_bold'>LOC</span></span>"
-                        spans.push(span);
-                    } else {
-                        var span = "<span>" + words[i] + "</span>"
-                        spans.push(span);
-                    }
-                };
-
-                document.getElementById("result-text").innerHTML = spans.join(" ");
-
-            } )
-
-            function reset() {
-                document.getElementById("taggingtool-submission").style.display = "block";
-                document.getElementById("taggingtool-result").style.display = "none";
-            }
-
-        </script>
     </body>
 </html>
