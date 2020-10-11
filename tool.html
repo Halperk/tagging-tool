@@ -100,6 +100,17 @@
                 document.getElementById("taggingtool_query_text").innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus lobortis ipsum, dignissim finibus ligula tempor a. Ut ac ante condimentum, porttitor felis quis, sollicitudin mi. Praesent et blandit leo. Donec pharetra aliquet lorem vel molestie. Duis porttitor augue at venenatis bibendum. In id interdum felis. Alper imperdiet sem vel magna tristique dictum. TEMA vehicula ante eget neque congue, rhoncus ultricies ligula maximus. Aliquam erat volutpat. In hac habitasse platea dictumst. Integer orci quam, malesuada ut risus vel, lacinia feugiat eros. Nam Istanbul orci sit amet orci cursus, sit amet scelerisque felis vehicula.";
             }
 
+            const editor = document.getElementById("taggingtool_query_text");
+            
+            editor.addEventListener("paste", function(e) {
+
+                e.preventDefault();
+
+                var text = (e.originalEvent || e).clipboardData.getData('text/plain');
+
+                document.execCommand("insertHTML", false, text);
+            });
+
         </script>
     </body>
 </html>
