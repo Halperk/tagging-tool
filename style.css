@@ -267,45 +267,6 @@ body {
     margin: 0 auto;
 }
 
-.word_per {
-    padding: 10px;
-    background-color: #ff000075;
-    border-radius: 5px 0 0 5px;
-}
-
-.word_per_bold {
-    font-weight: 700;
-    padding: 10px;
-    background-color: #ff000075;
-    border-radius: 0 5px 5px 0;
-}
-
-.word_org {
-    padding: 10px;
-    background-color: #00ff0075;
-    border-radius: 5px 0 0 5px;
-}
-
-.word_org_bold {
-    font-weight: 700;
-    padding: 10px;
-    background-color: #00ff0075;
-    border-radius: 0 5px 5px 0;
-}
-
-.word_loc {
-    padding: 10px;
-    background-color: #0000ff75;
-    border-radius: 5px 0 0 5px;
-}
-
-.word_loc_bold {
-    font-weight: 700;
-    padding: 10px;
-    background-color: #0000ff75;
-    border-radius: 0 5px 5px 0;
-}
-
 .result_paragraph {
     line-height: 3.0;
     font-weight: 500;
@@ -317,3 +278,110 @@ body {
     font-size: 36px;
     padding: 40px 80px 80px 80px;
 }
+
+.word_per {
+    padding: 5px;
+}
+
+.word_per_bold {
+    font-weight: 700;
+    padding: 5px;
+}
+
+.word_org {
+    padding: 5px;
+}
+
+.word_org_bold {
+    font-weight: 700;
+    padding: 5px;
+}
+
+.word_loc {
+    padding: 5px;
+}
+
+.word_loc_bold {
+    font-weight: 700;
+    padding: 5px;
+}
+
+.word_special_per {
+    text-align: center;
+    background-color: #6F000075;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 3px;
+}
+
+.word_special_org {
+    text-align: center;
+    background-color: #006F0075;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 3px;
+}
+
+.word_special_loc {
+    text-align: center;
+    background-color: #00006F75;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 3px;
+}
+
+.word_special_per:hover {
+    box-shadow: 0 0 10px 0px #EEF8FF;
+    margin: 6px;
+}
+
+.word_special_org:hover {
+    box-shadow: 0 0 10px 0px #EEF8FF;
+    margin: 6px;
+}
+
+.word_special_loc:hover {
+    box-shadow: 0 0 10px 0px #EEF8FF;
+    margin: 6px;
+}
+
+/*
+
+.word_special[data-title] {
+    position: relative;
+    cursor: help;
+}
+
+.word_special[data-title]:hover::before {
+    content: attr(data-title);
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    border-radius: 5px;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 12px;
+    background: #000000cc;
+    color: #FFFFFF;
+    bottom: 48px;
+    padding: 5px 15px;
+    z-index: 98;
+    width: 80px;
+    left: 20%;
+}
+
+.word_special[data-title]:hover::after {
+    border: solid;
+    bottom: 42px;
+    border-color: #000000cc transparent;
+    border-width: 6px 6px 0 6px;
+    content: "";
+    left: 50%;
+    position: absolute;
+    z-index: 99;
+}
+
+*/
