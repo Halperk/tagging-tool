@@ -41,9 +41,9 @@
                         <!-- <input type="hidden" name="token" value="000011112222333344445555"> -->
     
                         <div class="taggingtool_query" spellcheck="false" contenteditable="true">
-                            <p id="taggingtool_query_text">Alper bir Sabancı Üniversitesi öğrencisi, bu sebepten ötürü üniversite yıllarını Istanbul sınırlarında geçirecek gibi görünüyor. Aynı zamanda bir sivil toplum kuruluşu olan TEMA gönüllüsü.</p>
+                            <p id="taggingtool_query_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus lobortis ipsum, dignissim finibus ligula tempor a. Ut ac ante condimentum, porttitor felis quis, sollicitudin mi. Praesent et blandit leo. Donec pharetra aliquet lorem vel molestie. Duis porttitor augue at venenatis bibendum. In id interdum felis. Alper imperdiet sem vel magna tristique dictum. TEMA vehicula ante eget neque congue, rhoncus ultricies ligula maximus. Aliquam erat volutpat. In hac habitasse platea dictumst. Integer orci quam, malesuada ut risus vel, lacinia feugiat eros. Nam Istanbul orci sit amet orci cursus, sit amet scelerisque felis vehicula.</p>
                         </div>
-                        <br>
+                        <br>    
     
                         <div style="text-align: center; padding-top:20px; padding-bottom: 40px;"><button class="btn" type="submit">Submit</button></div>
     
@@ -76,13 +76,13 @@
                 for(var i = 0; i < words.length; i++) {
 
                     if(words[i].match("Alper")){
-                        var span = "<span class='word_per'>" + words[i] + "</span><span class='word_per_bold'>PER</span>"
+                        var span = "<span class='word_special_per'><span data-title='PER' class='word_per'>" + words[i] + "</span><span class='word_per_bold'>PER</span></span>"
                         spans.push(span);
                     } else if (words[i].match("TEMA")) {
-                        var span = "<span class='word_org'>" + words[i] + "</span><span class='word_org_bold'>ORG</span>"
+                        var span = "<span class='word_special_org'><span data-title='ORG' class='word_special word_org'>" + words[i] + "</span><span class='word_org_bold'>ORG</span></span>"
                         spans.push(span);
                     } else if (words[i].match("Istanbul")) {
-                        var span = "<span class='word_loc'>" + words[i] + "</span><span class='word_loc_bold'>LOC</span>"
+                        var span = "<span class='word_special_loc'><span data-title='LOC' class='word_special word_loc'>" + words[i] + "</span><span class='word_loc_bold'>LOC</span></span>"
                         spans.push(span);
                     } else {
                         var span = "<span>" + words[i] + "</span>"
