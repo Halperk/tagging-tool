@@ -152,6 +152,7 @@ body {
 }
 
 #main-content-image {
+    padding-top: 144px;
     float: right;
     pointer-events: none;
 }
